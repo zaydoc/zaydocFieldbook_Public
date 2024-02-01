@@ -1,0 +1,65 @@
+Option Compare Database
+
+Private Sub Command0_Click()
+On Error GoTo Err_Command0_Click
+
+    DoCmd.Close
+
+Exit_Command0_Click:
+    Exit Sub
+
+Err_Command0_Click:
+    MsgBox Err.Description
+    Resume Exit_Command0_Click
+    
+End Sub
+
+Private Sub Command12_Click()
+On Error GoTo Err_Command12_Click
+
+    Dim stSelection As String
+
+ If Me.Combo8.Enabled = True Then
+        stSelection = Me![Combo8]
+        DoCmd.OpenQuery stSelection, acNormal, acEdit
+        DoCmd.Close acForm, "QueryMenu", acSavePrompt
+        DoCmd.SelectObject acQuery, stSelection
+    ElseIf Me.Combo10.Enabled = True Then
+        stSelection = Me![Combo10]
+        DoCmd.OpenReport stSelection, acViewReport, , , acWindowNormal
+        DoCmd.Close acForm, "QueryMenu", acSavePrompt
+        DoCmd.SelectObject acReport, stSelection
+    End If
+
+Exit_Command12_Click:
+    Exit Sub
+
+Err_Command12_Click:
+    MsgBox Err.Description
+    Resume Exit_Command12_Click
+    
+End Sub
+
+Private Sub Form_Load()
+
+    Me.Combo8.Enabled = True
+    Me.Combo10.Enabled = False
+    
+    Me.Combo8.Value = Me.Combo8.Column(0, 0)
+    Me.Combo10.Value = Me.Combo10.Column(0, 0)
+
+End Sub
+
+Private Sub Option4_GotFocus()
+
+    Me.Combo8.Enabled = True
+    Me.Combo10.Enabled = False
+
+End Sub
+
+Private Sub Option6_GotFocus()
+
+    Me.Combo8.Enabled = False
+    Me.Combo10.Enabled = True
+
+End Sub

@@ -1,0 +1,39 @@
+Option Compare Database
+
+Private Sub Command0_Click()
+On Error GoTo Err_Command0_Click
+
+    DoCmd.Close
+
+Exit_Command0_Click:
+    Exit Sub
+
+Err_Command0_Click:
+    MsgBox Err.Description
+    Resume Exit_Command0_Click
+    
+End Sub
+
+Private Sub Command1_Click()
+On Error GoTo Err_Command1_Click
+
+    Dim stDocName As String
+
+    stDocName = "Del_RecordsOlderThanDate"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+    DoCmd.Close
+
+Exit_Command1_Click:
+    Exit Sub
+
+Err_Command1_Click:
+    MsgBox Err.Description
+    Resume Exit_Command1_Click
+    
+End Sub
+
+Private Sub Form_Load()
+
+Me.DeleteDate = (Date - (365 * 2))
+
+End Sub

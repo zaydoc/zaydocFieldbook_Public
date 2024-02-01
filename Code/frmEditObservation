@@ -1,0 +1,1104 @@
+Option Compare Database
+
+Private Sub Form_Current()
+
+   Label48.BackColor = vbWhite
+   Label57.BackColor = vbWhite
+   Label72.BackColor = vbWhite
+   Label87.BackColor = vbWhite
+   Label102.BackColor = vbWhite
+   Label113.BackColor = vbWhite
+   Label124.BackColor = vbWhite
+   Label135.BackColor = vbWhite
+   Label152.BackColor = vbWhite
+   Label159.BackColor = vbWhite
+   Label174.BackColor = vbWhite
+   Label187.BackColor = vbWhite
+   Label204.BackColor = vbWhite
+   Text216.BackColor = vbWhite
+   Label219.BackColor = vbWhite
+   Label234.BackColor = vbWhite
+   Label249.BackColor = vbWhite
+   Label264.BackColor = vbWhite
+   Label275.BackColor = vbWhite
+   Text285.BackColor = vbWhite
+   Text287.BackColor = vbWhite
+
+End Sub
+
+Private Sub Form_Load()
+
+   Application.SetOption "Confirm Action Queries", 0
+   Me.Text337.SetFocus
+
+End Sub
+
+Private Sub Form_Close()
+
+   Application.SetOption "Confirm Action Queries", 1
+
+End Sub
+
+Private Sub Frame47_AfterUpdate()
+
+   Label48.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame47_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(AXISFLOWER_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'AXISFLOWER', '" _
+         & AXISFLOWER.Value & "', 'U')"
+      textvar = AXISFLOWER_A.Value & "," & AXISFLOWER.Value
+      AXISFLOWER_A.Value = textvar
+   
+   ElseIf IsNull(AXISFLOWER_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'AXISFLOWER', '" _
+         & AXISFLOWER.Value & "', 'A')"
+      AXISFLOWER_A.Value = AXISFLOWER.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label48.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame56_AfterUpdate()
+
+   Label57.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame56_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(HABIT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'HABIT', '" _
+         & HABIT.Value & "', 'U')"
+      textvar = HABIT_A.Value & "," & HABIT.Value
+      HABIT_A.Value = textvar
+   
+   ElseIf IsNull(HABIT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'HABIT', '" _
+         & HABIT.Value & "', 'A')"
+      HABIT_A.Value = HABIT.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label57.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame71_AfterUpdate()
+
+   Label72.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame71_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PLANTSIZE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PLANTSIZE', '" _
+         & PLANTSIZE.Value & "', 'U')"
+      textvar = PLANTSIZE_A.Value & "," & PLANTSIZE.Value
+      PLANTSIZE_A.Value = textvar
+   
+   ElseIf IsNull(PLANTSIZE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PLANTSIZE', '" _
+         & PLANTSIZE.Value & "', 'A')"
+      PLANTSIZE_A.Value = PLANTSIZE.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label72.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame86_AfterUpdate()
+
+   Label87.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame86_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(MATURITY_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MATURITY', '" _
+         & MATURITY.Value & "', 'U')"
+      textvar = MATURITY_A.Value & "," & MATURITY.Value
+      MATURITY_A.Value = textvar
+   
+   ElseIf IsNull(MATURITY_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MATURITY', '" _
+         & MATURITY.Value & "', 'A')"
+      MATURITY_A.Value = MATURITY.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label87.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame101_AfterUpdate()
+
+   Label102.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame101_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(MAINSTEM1_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MAINSTEM1', '" _
+         & MAINSTEM1.Value & "', 'U')"
+      textvar = MAINSTEM1_A.Value & "," & MAINSTEM1.Value
+      MAINSTEM1_A.Value = textvar
+   
+   ElseIf IsNull(MAINSTEM1_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MAINSTEM1', '" _
+         & MAINSTEM1.Value & "', 'A')"
+      MAINSTEM1_A.Value = MAINSTEM1.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label102.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame112_AfterUpdate()
+
+   Label113.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame112_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(MAINSTEM2_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MAINSTEM2', '" _
+         & MAINSTEM2.Value & "', 'U')"
+      textvar = MAINSTEM2_A.Value & "," & MAINSTEM2.Value
+      MAINSTEM2_A.Value = textvar
+   
+   ElseIf IsNull(MAINSTEM2_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'MAINSTEM2', '" _
+         & MAINSTEM2.Value & "', 'A')"
+      MAINSTEM2_A.Value = MAINSTEM2.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label113.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame123_AfterUpdate()
+
+   Label124.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame123_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(STEMPIG_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'STEMPIG', '" _
+         & STEMPIG.Value & "', 'U')"
+      textvar = STEMPIG_A.Value & "," & STEMPIG.Value
+      STEMPIG_A.Value = textvar
+   
+   ElseIf IsNull(STEMPIG_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'STEMPIG', '" _
+         & STEMPIG.Value & "', 'A')"
+      STEMPIG_A.Value = STEMPIG.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label124.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame134_AfterUpdate()
+
+   Label135.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame134_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(LEAFCOLOR_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'LEAFCOLOR', '" _
+         & LEAFCOLOR.Value & "', 'U')"
+      textvar = LEAFCOLOR_A.Value & "," & LEAFCOLOR.Value
+      LEAFCOLOR_A.Value = textvar
+   
+   ElseIf IsNull(LEAFCOLOR_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'LEAFCOLOR', '" _
+         & LEAFCOLOR.Value & "', 'A')"
+      LEAFCOLOR_A.Value = LEAFCOLOR.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label135.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame151_AfterUpdate()
+
+   Label152.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame151_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(LEAFPUB_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'LEAFPUB', '" _
+         & LEAFPUB.Value & "', 'U')"
+      textvar = LEAFPUB_A.Value & "," & LEAFPUB.Value
+      LEAFPUB_A.Value = textvar
+   
+   ElseIf IsNull(LEAFPUB_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'LEAFPUB', '" _
+         & LEAFPUB.Value & "', 'A')"
+      LEAFPUB_A.Value = LEAFPUB.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label152.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame158_AfterUpdate()
+
+   Label159.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame158_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PODCONS_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODCONS', '" _
+         & PODCONS.Value & "', 'U')"
+      textvar = PODCONS_A.Value & "," & PODCONS.Value
+      PODCONS_A.Value = textvar
+   
+   ElseIf IsNull(PODCONS_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODCONS', '" _
+         & PODCONS.Value & "', 'A')"
+      PODCONS_A.Value = PODCONS.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label159.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame173_AfterUpdate()
+
+   Label174.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame173_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PODRETIC_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODRETIC', '" _
+         & PODRETIC.Value & "', 'U')"
+      textvar = PODRETIC_A.Value & "," & PODRETIC.Value
+      PODRETIC_A.Value = textvar
+   
+   ElseIf IsNull(PODRETIC_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODRETIC', '" _
+         & PODRETIC.Value & "', 'A')"
+      PODRETIC_A.Value = PODRETIC.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label174.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame186_AfterUpdate()
+
+   Label187.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame186_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PODSHAPE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODSHAPE', '" _
+         & PODSHAPE.Value & "', 'U')"
+      textvar = PODSHAPE_A.Value & "," & PODSHAPE.Value
+      PODSHAPE_A.Value = textvar
+   
+   ElseIf IsNull(PODSHAPE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODSHAPE', '" _
+         & PODSHAPE.Value & "', 'A')"
+      PODSHAPE_A.Value = PODSHAPE.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label187.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame203_AfterUpdate()
+
+   Label204.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame203_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PODTYPE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODTYPE', '" _
+         & PODTYPE.Value & "', 'U')"
+      textvar = PODTYPE_A.Value & "," & PODTYPE.Value
+      PODTYPE_A.Value = textvar
+   
+   ElseIf IsNull(PODTYPE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODTYPE', '" _
+         & PODTYPE.Value & "', 'A')"
+      PODTYPE_A.Value = PODTYPE.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label204.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Text216_AfterUpdate()
+
+   Text216.BackColor = vbGreen
+
+End Sub
+
+Private Sub Text216_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(PODWEIGHT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODWEIGHT', '" _
+         & PODWEIGHT.Value & "', 'U')"
+      textvar = PODWEIGHT_A.Value & "," & PODWEIGHT.Value
+      PODWEIGHT_A.Value = textvar
+   
+   ElseIf IsNull(PODWEIGHT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'PODWEIGHT', '" _
+         & PODWEIGHT.Value & "', 'A')"
+      PODWEIGHT_A.Value = PODWEIGHT.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Text216.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame218_AfterUpdate()
+
+   Label219.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame218_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDCOLOR1_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR1', '" _
+         & SEEDCOLOR1.Value & "', 'U')"
+      textvar = SEEDCOLOR1_A.Value & "," & SEEDCOLOR1.Value
+      SEEDCOLOR1_A.Value = textvar
+   
+   ElseIf IsNull(SEEDCOLOR1_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR1', '" _
+         & SEEDCOLOR1.Value & "', 'A')"
+      SEEDCOLOR1_A.Value = SEEDCOLOR1.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label219.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame233_AfterUpdate()
+
+   Label234.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame233_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDCOLOR2_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR2', '" _
+         & SEEDCOLOR2.Value & "', 'U')"
+      textvar = SEEDCOLOR2_A.Value & "," & SEEDCOLOR2.Value
+      SEEDCOLOR2_A.Value = textvar
+   
+   ElseIf IsNull(SEEDCOLOR2_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR2', '" _
+         & SEEDCOLOR2.Value & "', 'A')"
+      SEEDCOLOR2_A.Value = SEEDCOLOR2.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label234.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame248_AfterUpdate()
+
+   Label249.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame248_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDCOLOR3_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR3', '" _
+         & SEEDCOLOR3.Value & "', 'U')"
+      textvar = SEEDCOLOR3_A.Value & "," & SEEDCOLOR3.Value
+      SEEDCOLOR3_A.Value = textvar
+   
+   ElseIf IsNull(SEEDCOLOR3_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDCOLOR3', '" _
+         & SEEDCOLOR3.Value & "', 'A')"
+      SEEDCOLOR3_A.Value = SEEDCOLOR3.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label249.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame263_AfterUpdate()
+
+   Label264.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame263_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDPATT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDPATT', '" _
+         & SEEDPATT.Value & "', 'U')"
+      textvar = SEEDPATT_A.Value & "," & SEEDPATT.Value
+      SEEDPATT_A.Value = textvar
+   
+   ElseIf IsNull(SEEDPATT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDPATT', '" _
+         & SEEDPATT.Value & "', 'A')"
+      SEEDPATT_A.Value = SEEDPATT.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label264.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Frame274_AfterUpdate()
+
+   Label275.BackColor = vbGreen
+
+End Sub
+
+Private Sub Frame274_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDSIZE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDSIZE', '" _
+         & SEEDSIZE.Value & "', 'U')"
+      textvar = SEEDSIZE_A.Value & "," & SEEDSIZE.Value
+      SEEDSIZE_A.Value = textvar
+   
+   ElseIf IsNull(SEEDSIZE_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDSIZE', '" _
+         & SEEDSIZE.Value & "', 'A')"
+      SEEDSIZE_A.Value = SEEDSIZE.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Label275.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Text285_AfterUpdate()
+
+   Text285.BackColor = vbGreen
+
+End Sub
+
+Private Sub Text285_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDSPOD_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDSPOD', '" _
+         & SEEDSPOD.Value & "', 'U')"
+      textvar = SEEDSPOD_A.Value & "," & SEEDSPOD.Value
+      SEEDSPOD_A.Value = textvar
+   
+   ElseIf IsNull(SEEDSPOD_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDSPOD', '" _
+         & SEEDSPOD.Value & "', 'A')"
+      SEEDSPOD_A.Value = SEEDSPOD.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Text285.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+Private Sub Text287_AfterUpdate()
+
+   Text287.BackColor = vbGreen
+
+End Sub
+
+Private Sub Text287_Exit(Cancel As Integer)
+
+Dim textvar As String
+   
+On Error GoTo HandleError
+
+   If Not IsNull(SEEDWEIGHT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDWEIGHT', '" _
+         & SEEDWEIGHT.Value & "', 'U')"
+      textvar = SEEDWEIGHT_A.Value & "," & SEEDWEIGHT.Value
+      SEEDWEIGHT_A.Value = textvar
+   
+   ElseIf IsNull(SEEDWEIGHT_A) Then
+      DoCmd.RunSQL "INSERT INTO tbl_fieldbook_actions " _
+         & "(IVP, IVNO, IVS, IVT, dqname, ob, action)" _
+         & "VALUES ('" & IVP.Value & "', '" & IVNO.Value & "', '" _
+         & IVS.Value & "', '" & IVT.Value & "', 'SEEDWEIGHT', '" _
+         & SEEDWEIGHT.Value & "', 'A')"
+      SEEDWEIGHT_A.Value = SEEDWEIGHT.Value
+   End If
+   
+   DATEUPDATED.Value = Date
+   
+   Text287.BackColor = vbRed
+
+ExitHere:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.Description, vbCritical, "Access Error: Too Many Observations"
+  Resume ExitHere
+
+
+End Sub
+
+
+
+Private Sub Command310_Click()
+On Error GoTo Err_Command310_Click
+
+
+    DoCmd.GoToRecord , , acFirst
+
+Exit_Command310_Click:
+    Exit Sub
+
+Err_Command310_Click:
+    MsgBox Err.Description
+    Resume Exit_Command310_Click
+    
+End Sub
+Private Sub Command311_Click()
+On Error GoTo Err_Command311_Click
+
+
+    DoCmd.GoToRecord , , acPrevious
+
+Exit_Command311_Click:
+    Exit Sub
+
+Err_Command311_Click:
+    MsgBox Err.Description
+    Resume Exit_Command311_Click
+    
+End Sub
+Private Sub Command313_Click()
+On Error GoTo Err_Command313_Click
+
+
+    DoCmd.GoToRecord , , acNext
+
+Exit_Command313_Click:
+    Exit Sub
+
+Err_Command313_Click:
+    MsgBox Err.Description
+    Resume Exit_Command313_Click
+    
+End Sub
+Private Sub Command314_Click()
+On Error GoTo Err_Command314_Click
+
+
+    DoCmd.GoToRecord , , acLast
+
+Exit_Command314_Click:
+    Exit Sub
+
+Err_Command314_Click:
+    MsgBox Err.Description
+    Resume Exit_Command314_Click
+    
+End Sub
+Private Sub Command315_Click()
+On Error GoTo Err_Command315_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    If Me.Dirty Then Me.Dirty = False
+    DoCmd.Close
+        
+    stDocName = "MainMenu"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command315_Click:
+    Exit Sub
+
+Err_Command315_Click:
+    MsgBox Err.Description
+    Resume Exit_Command315_Click
+    
+End Sub
+Private Sub Command316_Click()
+On Error GoTo Err_Command316_Click
+
+
+    Screen.PreviousControl.SetFocus
+    DoCmd.RunCommand acCmdFind
+
+Exit_Command316_Click:
+    Exit Sub
+
+Err_Command316_Click:
+    MsgBox Err.Description
+    Resume Exit_Command316_Click
+    
+End Sub
+Private Sub Command317_Click()
+On Error GoTo Err_Command317_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command317_Click:
+    Exit Sub
+
+Err_Command317_Click:
+    MsgBox Err.Description
+    Resume Exit_Command317_Click
+    
+End Sub
+Private Sub Command339_Click()
+On Error GoTo Err_Command339_Click
+
+Me.Text337 = ""
+
+Exit_Command339_Click:
+    Exit Sub
+
+Err_Command339_Click:
+    MsgBox Err.Description
+    Resume Exit_Command339_Click
+    
+End Sub
+
+Private Sub Text337_Change()
+
+    'Reruns the query the form is based on
+    DoCmd.Requery
+    'Goes to a record where the field provider is the same as the value in the control QuickSearch
+    Me.RecordsetClone.FindFirst "[PLOTNO] = '" & Me![Text337] & "'"
+    
+    If Not Me.RecordsetClone.NoMatch Then
+        Me.Bookmark = Me.RecordsetClone.Bookmark
+    End If
+    
+    Me.Text337.SetFocus
+    
+    If Text337 <> "" Then
+        Me.Text337.SelStart = Len(Me.Text337)
+    End If
+
+End Sub
